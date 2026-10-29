@@ -14,98 +14,103 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="status-bar">
-    <strong>Early-stage initiative.</strong> The charity is being registered. We do not accept money yet.
-  </div>
+  <div class="status-bar" data-i18n-html="bar"><strong>Early-stage initiative.</strong> The charity is being registered. We do not accept money yet.</div>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#top" class="brand"><img src="favicon.svg" alt="" width="30" height="30"> Warm Hands <span class="brand-sub">Teplo Ruk</span></a>
-      <a href="#join" class="btn btn-small">Join the list</a>
+      <a href="#top" class="brand"><img src="favicon.svg" alt="" width="30" height="30"> <span data-i18n="brand">Warm Hands</span> <span class="brand-sub" data-i18n="brandSub">Teplo Ruk</span></a>
+      <div class="header-right">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="uk">UA</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <a href="#join" class="btn btn-small hide-xs" data-i18n="nav.join">Join the list</a>
+      </div>
     </div>
   </header>
 
   <main id="top">
     <div id="confirmedBanner" class="banner" hidden>
-      <div class="container">Thank you — your sign-up is confirmed and counted.</div>
+      <div class="container" data-i18n="confirmed">Thank you — your sign-up is confirmed and counted.</div>
     </div>
 
     <section class="hero">
       <div class="container">
-        <p class="tagline">One Dollar. Forever.</p>
-        <h1>They worked their whole lives.<br><span>Your gift will work for them forever.</span></h1>
-        <p class="lead">A permanent fund for Ukrainian pensioners with long work records and very small pensions. The capital is never spent. Only its yield is paid out — every month, for as long as the fund exists.</p>
+        <p class="tagline" data-i18n="tagline">One Dollar. Forever.</p>
+        <h1 data-i18n-html="hero.title">They worked their whole lives.<br><span>Your gift will work for them forever.</span></h1>
+        <p class="lead" data-i18n="hero.lead">A permanent fund for Ukrainian pensioners with long work records and very small pensions. The capital is never spent. Only its yield is paid out — every month, for as long as the fund exists.</p>
         <div class="hero-actions">
-          <a href="#join" class="btn">I'd give monthly — count me in</a>
-          <a href="#calculator" class="btn btn-ghost">Check the math</a>
+          <a href="#join" class="btn" data-i18n="hero.cta1">I'd give monthly — count me in</a>
+          <a href="#calculator" class="btn btn-ghost" data-i18n="hero.cta2">Check the math</a>
         </div>
-        <p class="counter-line" id="counterLine" hidden><span id="counterValue"></span> confirmed sign-ups so far</p>
+        <p class="counter-line" id="counterLine" hidden><span id="counterValue"></span> <span data-i18n="counter">confirmed sign-ups so far</span></p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <h2>How it works</h2>
+        <h2 data-i18n="how.title">How it works</h2>
         <ol class="flow">
-          <li><span class="flow-n">1</span><div><strong>You give.</strong> Once, or a few dollars a month.</div></li>
-          <li><span class="flow-n">2</span><div><strong>It becomes permanent capital.</strong> Placed in Ukrainian government bonds. The capital itself is never spent.</div></li>
-          <li><span class="flow-n">3</span><div><strong>Only the yield is paid out.</strong> Every month, to pensioners — starting at 1,000 UAH per person, designed to grow over time.</div></li>
+          <li><span class="flow-n">1</span><div data-i18n-html="how.s1"><strong>You give.</strong> Once, or a few dollars a month.</div></li>
+          <li><span class="flow-n">2</span><div data-i18n-html="how.s2"><strong>It becomes permanent capital.</strong> Placed in Ukrainian government bonds. The capital itself is never spent.</div></li>
+          <li><span class="flow-n">3</span><div data-i18n-html="how.s3"><strong>Only the yield is paid out.</strong> Every month, to pensioners — starting at 1,000 UAH per person, designed to grow over time.</div></li>
         </ol>
-        <p class="fine">You don't get anything back — this is a donation, not a financial product. What lasts forever is the capital, not a guaranteed lifetime payment to any one person.</p>
+        <p class="fine" data-i18n="how.fine">You don't get anything back — this is a donation, not a financial product. What lasts forever is the capital, not a guaranteed lifetime payment to any one person.</p>
       </div>
     </section>
 
     <section id="calculator" class="section section-alt">
       <div class="container">
-        <h2>The calculator</h2>
-        <p class="section-lead">No emotions, just the mechanism. Every assumption is open — set a pessimistic yield and see where the model breaks.</p>
+        <h2 data-i18n="calc.title">The calculator</h2>
+        <p class="section-lead" data-i18n="calc.lead">No emotions, just the mechanism. Every assumption is open — set a pessimistic yield and see where the model breaks.</p>
 
         <div class="calc">
           <div class="calc-inputs">
             <div class="seg" role="group" aria-label="Gift type">
-              <button type="button" data-mode="monthly" aria-pressed="true">Monthly</button>
-              <button type="button" data-mode="once" aria-pressed="false">One-time</button>
+              <button type="button" data-mode="monthly" aria-pressed="true" data-i18n="calc.monthly">Monthly</button>
+              <button type="button" data-mode="once" aria-pressed="false" data-i18n="calc.once">One-time</button>
             </div>
 
             <div class="field" data-show="monthly">
-              <label for="monthlyAmt">Per month: <output id="monthlyOut">$10</output></label>
+              <label for="monthlyAmt"><span data-i18n="calc.perMonth">Per month:</span> <output id="monthlyOut">$10</output></label>
               <input type="range" id="monthlyAmt" min="1" max="200" step="1" value="10">
             </div>
             <div class="field" data-show="monthly">
-              <label for="months">For how many months: <output id="monthsOut">12</output></label>
+              <label for="months"><span data-i18n="calc.months">For how many months:</span> <output id="monthsOut">12</output></label>
               <input type="range" id="months" min="1" max="60" step="1" value="12">
             </div>
             <div class="field" data-show="once" hidden>
-              <label for="onceAmt">One-time gift: <output id="onceOut">$100</output></label>
+              <label for="onceAmt"><span data-i18n="calc.onceGift">One-time gift:</span> <output id="onceOut">$100</output></label>
               <input type="range" id="onceAmt" min="5" max="5000" step="5" value="100">
             </div>
 
             <fieldset class="assumptions">
-              <legend>Assumptions (edit them)</legend>
+              <legend data-i18n="calc.assumptions">Assumptions (edit them)</legend>
               <div class="seg seg-small" role="group" aria-label="Yield scenario">
                 <button type="button" data-r="3">3%</button>
                 <button type="button" data-r="5" aria-pressed="true">5%</button>
                 <button type="button" data-r="6">6%</button>
               </div>
-              <label>Real yield, % per year <input type="number" id="r" step="0.1" min="0" max="20"></label>
-              <label>Exchange rate, UAH per $ <input type="number" id="fx" step="0.5" min="1"></label>
-              <label>Payout, UAH per month <input type="number" id="payout" step="50" min="1"></label>
+              <label><span data-i18n="calc.r">Real yield, % per year</span> <input type="number" id="r" step="0.1" min="0" max="20"></label>
+              <label><span data-i18n="calc.fx">Exchange rate, UAH per $</span> <input type="number" id="fx" step="0.5" min="1"></label>
+              <label><span data-i18n="calc.payout">Payout, UAH per month</span> <input type="number" id="payout" step="50" min="1"></label>
             </fieldset>
           </div>
 
           <div class="calc-result" aria-live="polite">
-            <p class="res-label">Your gift: <strong id="giftTotal"></strong></p>
+            <p class="res-label"><span data-i18n="calc.yourGift">Your gift:</span> <strong id="giftTotal"></strong></p>
             <p class="res-main" id="resMain"></p>
             <p class="res-cost" id="resCost"></p>
             <p class="res-small" id="resSmall"></p>
             <p class="res-warn" id="resWarn" hidden></p>
-            <a href="#join" class="btn btn-block">Count me in</a>
+            <a href="#join" class="btn btn-block" data-i18n="form.submit">Count me in</a>
           </div>
         </div>
 
         <details class="math">
-          <summary>See the formula</summary>
-          <pre>w = r − 1% − 0.5%
+          <summary data-i18n="math.summary">See the formula</summary>
+          <pre data-i18n="math.pre">w = r − 1% − 0.5%
     (payout rate = real yield − 1% administration − 0.5% reserved for payout growth)
 P = 12 × payout / fx
     (one pensioner's yearly payout, in $)
@@ -115,7 +120,7 @@ C = P × (1 + 1.25 × w) / w / (0.90 × 0.965)
     0.965 → 3.5% payment processing fees
 
 C is the capital needed to support one pensioner forever.</pre>
-          <p>Think a number is wrong? <a id="redditLink" href="#" target="_blank" rel="noopener">Tell us where the math is wrong</a> — we'd rather hear it now.</p>
+          <p><span data-i18n="math.q">Think a number is wrong?</span> <a id="redditLink" href="#" target="_blank" rel="noopener" data-i18n="math.link">Tell us where the math is wrong</a> <span data-i18n="math.tail">— we'd rather hear it now.</span></p>
         </details>
       </div>
     </section>
@@ -127,82 +132,82 @@ C is the capital needed to support one pensioner forever.</pre>
           <span>MF</span>
         </div>
         <div>
-          <h2>Who is behind this</h2>
-          <p><strong>Mykola Fesenko</strong> — an analyst at a Ukrainian law firm who builds AI tools. This is a personal initiative to find out whether a permanent fund for Ukrainian pensioners can work.</p>
-          <p><a id="redditProfile" href="#" target="_blank" rel="noopener">u/MykFesenko_ua on Reddit</a></p>
+          <h2 data-i18n="about.title">Who is behind this</h2>
+          <p data-i18n-html="about.p"><strong>Mykola Fesenko</strong> — an analyst at a Ukrainian law firm who builds AI tools. This is a personal initiative to find out whether a permanent fund for Ukrainian pensioners can work.</p>
+          <p><a id="redditProfile" href="#" target="_blank" rel="noopener" data-i18n="about.reddit">u/MykFesenko_ua on Reddit</a></p>
         </div>
       </div>
     </section>
 
     <section class="section section-alt">
       <div class="container">
-        <h2>Honest status</h2>
+        <h2 data-i18n="status.title">Honest status</h2>
         <ul class="status-list">
-          <li><strong>Early-stage initiative.</strong> The charity is being registered. We do not accept money yet — there are no payment buttons on this site.</li>
-          <li><strong>This is a test of interest.</strong> If 150–300 people confirm they'd give within 6 weeks, the charity gets registered and payments open. If not, the project closes and your data is deleted.</li>
-          <li><strong>No tax benefits</strong> are available at this stage.</li>
-          <li>We don't collect any data about pensioners at this stage.</li>
+          <li data-i18n-html="status.l1"><strong>Early-stage initiative.</strong> The charity is being registered. We do not accept money yet — there are no payment buttons on this site.</li>
+          <li data-i18n-html="status.l2"><strong>This is a test of interest.</strong> If 150–300 people confirm they'd give within 6 weeks, the charity gets registered and payments open. If not, the project closes and your data is deleted.</li>
+          <li data-i18n-html="status.l3"><strong>No tax benefits</strong> are available at this stage.</li>
+          <li data-i18n="status.l4">We don't collect any data about pensioners at this stage.</li>
         </ul>
       </div>
     </section>
 
     <section id="join" class="section">
       <div class="container narrow">
-        <h2>Join the list</h2>
-        <p class="section-lead">Tell us you'd give. No money now — we'll email you only if the fund launches.</p>
+        <h2 data-i18n="form.title">Join the list</h2>
+        <p class="section-lead" data-i18n="form.lead">Tell us you'd give. No money now — we'll email you only if the fund launches.</p>
 
         <form id="signupForm" class="form" novalidate>
-          <label>Email <span class="req">*</span>
+          <label><span data-i18n="form.email">Email</span> <span class="req">*</span>
             <input type="email" name="email" required autocomplete="email">
           </label>
-          <label>Country <span class="req">*</span>
+          <label><span data-i18n="form.country">Country</span> <span class="req">*</span>
             <select name="country" id="country" required></select>
           </label>
           <fieldset>
-            <legend>Planned monthly amount <span class="req">*</span></legend>
+            <legend><span data-i18n="form.amount">Planned monthly amount</span> <span class="req">*</span></legend>
             <div class="chips">
               <label><input type="radio" name="amount" value="5" required> $5</label>
               <label><input type="radio" name="amount" value="10"> $10</label>
               <label><input type="radio" name="amount" value="25"> $25</label>
               <label><input type="radio" name="amount" value="50"> $50</label>
-              <label><input type="radio" name="amount" value="other"> Other</label>
+              <label><input type="radio" name="amount" value="other"> <span data-i18n="form.other">Other</span></label>
             </div>
-            <input type="number" name="amountOther" id="amountOther" min="1" placeholder="Amount in $" hidden>
+            <input type="number" name="amountOther" id="amountOther" min="1" placeholder="Amount in $" data-i18n-placeholder="form.otherPh" hidden>
           </fieldset>
 
           <details class="optional">
-            <summary>Optional</summary>
-            <label>Employer <small>(helps us estimate corporate matching)</small>
+            <summary data-i18n="form.optional">Optional</summary>
+            <label><span data-i18n-html="form.employer">Employer <small>(helps us estimate corporate matching)</small></span>
               <input type="text" name="employer" autocomplete="organization">
             </label>
-            <label class="check"><input type="checkbox" name="bigger" value="yes"> I'm open to discussing a larger gift or a gift from my company</label>
-            <label>How did you hear about us?
+            <label class="check"><input type="checkbox" name="bigger" value="yes"> <span data-i18n="form.bigger">I'm open to discussing a larger gift or a gift from my company</span></label>
+            <label><span data-i18n="form.source">How did you hear about us?</span>
               <select name="source">
                 <option value="">—</option>
-                <option>Reddit</option>
-                <option>A friend</option>
-                <option>Other social media</option>
-                <option>Other</option>
+                <option value="Reddit">Reddit</option>
+                <option value="A friend" data-i18n="form.src.friend">A friend</option>
+                <option value="Other social media" data-i18n="form.src.social">Other social media</option>
+                <option value="Other" data-i18n="form.src.other">Other</option>
               </select>
             </label>
           </details>
 
           <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-          <label class="check"><input type="checkbox" name="consent" value="yes" required> I agree that my data is processed as described in the <a href="privacy.html" target="_blank">Privacy Policy</a>. <span class="req">*</span></label>
+          <label class="check"><input type="checkbox" name="consent" value="yes" required> <span data-i18n-html="form.consent">I agree that my data is processed as described in the <a href="privacy.html" target="_blank">Privacy Policy</a>.</span> <span class="req">*</span></label>
 
           <p class="form-error" id="formError" hidden></p>
-          <button type="submit" class="btn btn-block" id="submitBtn">Count me in</button>
-          <p class="fine">You'll get an email to confirm. Only confirmed sign-ups are counted.</p>
+          <button type="submit" class="btn btn-block" id="submitBtn" data-i18n="form.submit">Count me in</button>
+          <p class="fine" data-i18n="form.fine">You'll get an email to confirm. Only confirmed sign-ups are counted.</p>
         </form>
 
         <div id="thanks" class="thanks" hidden>
-          <h3>Almost done — check your inbox.</h3>
-          <p>Click the link in the email to confirm. Only confirmed sign-ups count.</p>
-          <p><strong>Your personal invite link.</strong> We count how many people join through it:</p>
+          <h3 data-i18n="thanks.title">Almost done — check your inbox.</h3>
+          <p data-i18n="thanks.p1">Click the link in the email to confirm. Only confirmed sign-ups count.</p>
+          <p data-i18n-html="thanks.p2"><strong>Your personal invite link.</strong> We count how many people join through it:</p>
           <div class="ref">
             <input type="text" id="refLink" readonly>
-            <button type="button" class="btn btn-small" id="copyRef">Copy</button>
+            <button type="button" class="btn btn-small" id="copyRef" data-i18n="thanks.copy">Copy</button>
           </div>
         </div>
       </div>
@@ -211,12 +216,13 @@ C is the capital needed to support one pensioner forever.</pre>
 
   <footer class="site-footer">
     <div class="container">
-      <p>Warm Hands (Teplo Ruk) — One Dollar. Forever. An early-stage initiative. The charity is being registered; we do not accept money yet.</p>
-      <p><a href="privacy.html">Privacy Policy</a> · <a id="contactLink" href="#">Contact</a></p>
+      <p data-i18n="footer.p">Warm Hands (Teplo Ruk) — One Dollar. Forever. An early-stage initiative. The charity is being registered; we do not accept money yet.</p>
+      <p><a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a> · <a id="contactLink" href="#" data-i18n="footer.contact">Contact</a></p>
     </div>
   </footer>
 
   <script src="config.js"></script>
+  <script src="i18n.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

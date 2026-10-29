@@ -13,27 +13,29 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="./" class="brand"><img src="favicon.svg" alt="" width="30" height="30"> Warm Hands <span class="brand-sub">Teplo Ruk</span></a>
+      <a href="./" class="brand"><img src="favicon.svg" alt="" width="30" height="30"> <span class="brand-name">Warm Hands</span></a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="uk">UA</button>
+        <button type="button" data-lang="es">ES</button>
+      </div>
     </div>
   </header>
 
   <main class="section">
-    <div class="container narrow policy">
+    <article class="container narrow policy" data-policy="en" lang="en">
       <h1>Privacy Policy</h1>
       <p class="fine">Last updated: 29 October 2026</p>
-
       <h2>Who we are</h2>
       <p>Warm Hands (Teplo Ruk) is an early-stage initiative to create a permanent charitable fund for Ukrainian pensioners. The charity is not registered yet. Until it is, the person responsible for your data (the data controller) is the founder, Mykola Fesenko. Contact: <a class="contact-email" href="#"></a>.</p>
-
       <h2>What we collect</h2>
       <ul>
         <li><strong>Required:</strong> your email, country and the monthly amount you plan to give.</li>
         <li><strong>Optional:</strong> your employer, whether you're open to discussing a larger or company gift, and how you heard about us.</li>
         <li><strong>Referral data:</strong> your personal invite code, and the code of the person who invited you, if any.</li>
-        <li>The date of your sign-up and whether you confirmed it by email.</li>
+        <li>The date of your sign-up, the site language, and whether you confirmed it by email.</li>
       </ul>
-      <p>We do not collect payment details — we don't accept money at this stage. We don't use analytics or advertising cookies. Your browser stores the invite code you arrived with (local storage) so it can be attached to your sign-up.</p>
-
+      <p>We do not collect payment details — we don't accept money at this stage. We don't use analytics or advertising cookies. Your browser stores your language choice and the invite code you arrived with (local storage).</p>
       <h2>Why</h2>
       <ul>
         <li>To find out whether there is enough interest to register the charity (the goal is 150–300 confirmed sign-ups in 6 weeks).</li>
@@ -42,28 +44,101 @@
         <li>Your employer helps us estimate whether corporate gift-matching could apply.</li>
       </ul>
       <p>The legal basis is your consent (GDPR Art. 6(1)(a)). You can withdraw it at any time.</p>
-
       <h2>Where it is stored</h2>
       <p>Sign-ups are stored in a Google Sheet in the founder's Google account, and confirmation emails are sent through Gmail. Google may process this data outside the EU, including in the United States. We do not sell or share your data with anyone else.</p>
-
       <h2>How long we keep it</h2>
       <p>If the charity is not registered after this test, all sign-up data is deleted within 30 days of the project closing. If it is registered, we keep your data only until we've contacted you about the launch, and no longer than 12 months from your sign-up, unless you choose to stay in touch.</p>
-
       <h2>Your rights</h2>
       <p>You can ask to see, correct or delete your data, or withdraw your consent, by emailing <a class="contact-email" href="#"></a>. We will do it within 30 days. You also have the right to complain to your local data protection authority.</p>
-    </div>
-  </main>
+      <p><a href="./">← Back to the site</a></p>
+    </article>
 
-  <footer class="site-footer">
-    <div class="container"><p><a href="./">← Back to the site</a></p></div>
-  </footer>
+    <article class="container narrow policy" data-policy="uk" lang="uk" hidden>
+      <h1>Політика конфіденційності</h1>
+      <p class="fine">Оновлено: 29 жовтня 2026 року</p>
+      <h2>Хто ми</h2>
+      <p>«Тепло рук» (Warm Hands) — ініціатива на ранньому етапі, мета якої — створити вічний благодійний фонд для українських пенсіонерів. Фонд ще не зареєстровано. До реєстрації відповідальна за ваші дані особа (контролер даних) — засновник Микола Фесенко. Контакт: <a class="contact-email" href="#"></a>.</p>
+      <h2>Що ми збираємо</h2>
+      <ul>
+        <li><strong>Обов'язково:</strong> ваш email, країну і суму, яку ви плануєте давати щомісяця.</li>
+        <li><strong>Необов'язково:</strong> вашого роботодавця, чи готові ви обговорити більший внесок або внесок від компанії, і звідки ви про нас дізналися.</li>
+        <li><strong>Реферальні дані:</strong> ваш особистий код запрошення і код людини, яка вас запросила, якщо такий є.</li>
+        <li>Дату заявки, мову сайту і те, чи підтвердили ви заявку через email.</li>
+      </ul>
+      <p>Платіжних даних ми не збираємо — на цьому етапі гроші не приймаються. Аналітичних і рекламних cookie ми не використовуємо. Ваш браузер зберігає вибрану мову і код запрошення, з яким ви прийшли (local storage).</p>
+      <h2>Навіщо</h2>
+      <ul>
+        <li>Щоб з'ясувати, чи достатньо інтересу для реєстрації фонду (мета — 150–300 підтверджених заявок за 6 тижнів).</li>
+        <li>Щоб показувати на сайті загальну кількість підтверджених заявок (лише число, без персональних даних).</li>
+        <li>Щоб один раз написати вам, якщо фонд запуститься, — і ви вирішите, чи робити внесок.</li>
+        <li>Роботодавець допомагає оцінити, чи можливе корпоративне подвоєння пожертв (corporate matching).</li>
+      </ul>
+      <p>Правова підстава — ваша згода (ст. 6(1)(a) GDPR). Ви можете відкликати її будь-коли.</p>
+      <h2>Де зберігаються дані</h2>
+      <p>Заявки зберігаються в Google-таблиці в Google-акаунті засновника, листи підтвердження надсилаються через Gmail. Google може обробляти ці дані за межами ЄС, зокрема у США. Ми не продаємо і не передаємо ваші дані нікому іншому.</p>
+      <h2>Як довго ми їх зберігаємо</h2>
+      <p>Якщо після цієї перевірки фонд не буде зареєстровано, усі дані заявок видаляються протягом 30 днів після закриття проєкту. Якщо фонд зареєструють, ми зберігаємо ваші дані лише доти, доки не повідомимо вас про запуск, і не довше 12 місяців від дати заявки — якщо ви самі не захочете лишатися на зв'язку.</p>
+      <h2>Ваші права</h2>
+      <p>Ви можете попросити переглянути, виправити або видалити ваші дані чи відкликати згоду, написавши на <a class="contact-email" href="#"></a>. Ми зробимо це протягом 30 днів. Ви також маєте право подати скаргу до органу із захисту персональних даних у вашій країні.</p>
+      <p><a href="./">← Повернутися на сайт</a></p>
+    </article>
+
+    <article class="container narrow policy" data-policy="es" lang="es" hidden>
+      <h1>Política de privacidad</h1>
+      <p class="fine">Última actualización: 29 de octubre de 2026</p>
+      <h2>Quiénes somos</h2>
+      <p>Manos Cálidas (Teplo Ruk) es una iniciativa en fase inicial para crear un fondo benéfico permanente para pensionistas ucranianos. La fundación aún no está registrada. Hasta entonces, el responsable de tus datos es su fundador, Mykola Fesenko. Contacto: <a class="contact-email" href="#"></a>.</p>
+      <h2>Qué datos recogemos</h2>
+      <ul>
+        <li><strong>Obligatorios:</strong> tu email, tu país y el importe mensual que piensas donar.</li>
+        <li><strong>Opcionales:</strong> la empresa donde trabajas, si estás dispuesto a hablar de una donación mayor o de tu empresa, y cómo nos conociste.</li>
+        <li><strong>Datos de invitación:</strong> tu código personal de invitación y, si lo hay, el de la persona que te invitó.</li>
+        <li>La fecha de tu inscripción, el idioma del sitio y si la confirmaste por email.</li>
+      </ul>
+      <p>No recogemos datos de pago: en esta fase no aceptamos dinero. No usamos cookies de analítica ni de publicidad. Tu navegador guarda el idioma elegido y el código de invitación con el que llegaste (almacenamiento local).</p>
+      <h2>Para qué</h2>
+      <ul>
+        <li>Para saber si hay suficiente interés para registrar la fundación (el objetivo es de 150 a 300 inscripciones confirmadas en 6 semanas).</li>
+        <li>Para mostrar en la web el número total de inscripciones confirmadas (solo una cifra, sin datos personales).</li>
+        <li>Para escribirte una vez si el fondo se pone en marcha, y que decidas si donar.</li>
+        <li>Tu empresa nos ayuda a estimar si podría aplicarse el corporate matching (la empresa iguala tu donación).</li>
+      </ul>
+      <p>La base jurídica es tu consentimiento (art. 6.1.a del RGPD). Puedes retirarlo en cualquier momento.</p>
+      <h2>Dónde se guardan</h2>
+      <p>Las inscripciones se guardan en una hoja de cálculo de Google en la cuenta del fundador, y los emails de confirmación se envían a través de Gmail. Google puede tratar estos datos fuera de la UE, incluso en Estados Unidos. No vendemos ni cedemos tus datos a nadie más.</p>
+      <h2>Cuánto tiempo los conservamos</h2>
+      <p>Si tras esta prueba no se registra la fundación, todos los datos se eliminan en un plazo de 30 días desde el cierre del proyecto. Si se registra, conservamos tus datos solo hasta avisarte del lanzamiento y como máximo 12 meses desde tu inscripción, salvo que decidas seguir en contacto.</p>
+      <h2>Tus derechos</h2>
+      <p>Puedes pedir ver, corregir o eliminar tus datos, o retirar tu consentimiento, escribiendo a <a class="contact-email" href="#"></a>. Lo haremos en un plazo de 30 días. También tienes derecho a reclamar ante la autoridad de protección de datos de tu país.</p>
+      <p><a href="./">← Volver a la web</a></p>
+    </article>
+  </main>
 
   <script src="config.js"></script>
   <script>
-    document.querySelectorAll(".contact-email").forEach(function (a) {
-      a.href = "mailto:" + window.SITE_CONFIG.CONTACT_EMAIL;
-      a.textContent = window.SITE_CONFIG.CONTACT_EMAIL;
-    });
+    (function () {
+      var BRAND = { en: "Warm Hands", uk: "Тепло рук", es: "Manos Cálidas" };
+      var TITLE = { en: "Privacy Policy", uk: "Політика конфіденційності", es: "Política de privacidad" };
+      document.querySelectorAll(".contact-email").forEach(function (a) {
+        a.href = "mailto:" + window.SITE_CONFIG.CONTACT_EMAIL;
+        a.textContent = window.SITE_CONFIG.CONTACT_EMAIL;
+      });
+      function setLang(lang) {
+        document.querySelectorAll("[data-policy]").forEach(function (el) { el.hidden = el.dataset.policy !== lang; });
+        document.querySelectorAll("[data-lang]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
+        document.querySelector(".brand-name").textContent = BRAND[lang];
+        document.title = TITLE[lang] + " — " + BRAND[lang];
+        document.documentElement.lang = lang;
+        try { localStorage.setItem("lang", lang); } catch (e) {}
+      }
+      document.querySelectorAll("[data-lang]").forEach(function (b) {
+        b.addEventListener("click", function () { setLang(b.dataset.lang); });
+      });
+      var saved = null;
+      try { saved = localStorage.getItem("lang"); } catch (e) {}
+      var fromUrl = new URLSearchParams(location.search).get("lang");
+      setLang(BRAND[fromUrl] ? fromUrl : BRAND[saved] ? saved : "en");
+    })();
   </script>
 </body>
 </html>

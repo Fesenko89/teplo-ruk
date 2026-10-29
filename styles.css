@@ -65,6 +65,14 @@ a { color: var(--link); }
   display: inline-block; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
   font-size: .85rem; background: var(--navy); color: var(--accent); padding: 5px 12px; border-radius: 999px;
 }
+.header-right { display: flex; align-items: center; gap: 12px; }
+.lang { display: flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; }
+.lang button {
+  border: 0; background: transparent; color: var(--muted); cursor: pointer;
+  font: 600 .8rem "Inter", sans-serif; padding: 6px 10px;
+}
+.lang button[aria-pressed="true"] { background: var(--navy); color: #fff; }
+@media (max-width: 520px) { .hide-xs { display: none; } .brand-sub { display: none; } }
 .banner { background: #d8f5df; color: #124a22; padding: 12px 0; font-weight: 600; }
 
 .btn {
