@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=202610291646">
+  <link rel="stylesheet" href="styles.css?v=202610291716">
 </head>
 <body>
   <div class="status-bar" data-i18n-html="bar"><strong>Early-stage initiative.</strong> The charity is not registered yet. We do not accept money.</div>
@@ -111,6 +111,8 @@
             <p class="res-small" id="resSmall"></p>
             <p class="res-warn" id="resWarn" hidden></p>
             <a href="#join" class="btn btn-block" data-i18n="form.submit">Count me in</a>
+            <button type="button" class="btn btn-block btn-on-dark" id="shareCalc" data-i18n="calc.shareBtn">Share this calculation</button>
+            <p class="share-note" id="shareCalcNote" hidden></p>
           </div>
         </div>
 
@@ -150,10 +152,27 @@ C is the capital needed to support one pensioner forever.</pre>
         <h3 class="sub" data-i18n="dollar.yieldTitle">Every year, the capital's yield pays for:</h3>
         <ul class="yield-list">
           <li data-i18n-html="dollar.y1"><strong>Monthly payouts</strong> to pensioners.</li>
-          <li data-i18n-html="dollar.y2"><strong>1% of the capital</strong> for managing the capital and the program.</li>
+          <li data-i18n-html="dollar.y2"><strong>1% of the capital a year</strong> for managing the capital and the program. It comes out of the yield, not the capital: on $100,000 that's $1,000 a year.</li>
           <li data-i18n-html="dollar.y3"><strong>0.5% of the capital</strong> kept back so payouts can grow.</li>
           <li data-i18n-html="dollar.y4"><strong>A reserve</strong> for funeral assistance.</li>
         </ul>
+
+        <h3 class="sub" data-i18n="ex.title">Example: $1,000,000 of capital, one year</h3>
+        <div class="ex-wrap">
+          <table class="ex-table">
+            <thead>
+              <tr><th></th><th data-i18n="ex.good">Good year: earned $100,000</th><th data-i18n="ex.bad">Bad year: earned $20,000</th></tr>
+            </thead>
+            <tbody>
+              <tr><td data-i18n="ex.r1">Payouts and funeral reserve (3.5%)</td><td>$35,000</td><td>$35,000</td></tr>
+              <tr><td data-i18n="ex.r2">Managing the capital and the program (1%)</td><td>$10,000</td><td>$10,000</td></tr>
+              <tr><td data-i18n="ex.r3">Reserve for payout growth (0.5%)</td><td>$5,000</td><td>$5,000</td></tr>
+              <tr class="ex-total"><td data-i18n="ex.r4">Spent in total</td><td>$50,000</td><td>$50,000</td></tr>
+              <tr><td data-i18n="ex.r5">Left in the fund / taken from the reserve</td><td class="pos">+$50,000</td><td class="neg">−$30,000</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fine" data-i18n="ex.note">The fund spends the same planned share every year (5% of the capital in this model). In a good year the rest stays in the fund; in a bad year the gap is covered from the reserve (cl. 5.7–5.9). $35,000 a year is about 125 pensioners at 1,000 UAH a month. The exact share will be set by the investment policy.</p>
       </div>
     </section>
 
@@ -284,6 +303,13 @@ C is the capital needed to support one pensioner forever.</pre>
             <input type="text" id="refLink" readonly>
             <button type="button" class="btn btn-small" id="copyRef" data-i18n="thanks.copy">Copy</button>
           </div>
+          <p class="share-title" data-i18n="thanks.shareTitle">Or share it:</p>
+          <div class="share-row">
+            <a id="shReddit" class="share-btn" href="#" target="_blank" rel="noopener">Reddit</a>
+            <a id="shTelegram" class="share-btn" href="#" target="_blank" rel="noopener">Telegram</a>
+            <a id="shWhatsApp" class="share-btn" href="#" target="_blank" rel="noopener">WhatsApp</a>
+            <button id="shNative" type="button" class="share-btn" hidden data-i18n="thanks.more">More…</button>
+          </div>
         </div>
       </div>
     </section>
@@ -296,8 +322,8 @@ C is the capital needed to support one pensioner forever.</pre>
     </div>
   </footer>
 
-  <script src="config.js?v=202610291646"></script>
-  <script src="i18n.js?v=202610291646"></script>
-  <script src="app.js?v=202610291646"></script>
+  <script src="config.js?v=202610291716"></script>
+  <script src="i18n.js?v=202610291716"></script>
+  <script src="app.js?v=202610291716"></script>
 </body>
 </html>

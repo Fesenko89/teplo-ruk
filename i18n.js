@@ -21,7 +21,10 @@ window.I18N = {
     "err.amount": "Please choose a monthly amount.",
     "err.consent": "Please agree to the Privacy Policy.",
     "err.closed": "Sign-ups are not open yet – the form backend isn't connected. Please check back soon.",
-    "err.network": "Network error. Please try again."
+    "err.network": "Network error. Please try again.",
+    "calc.shareCopied": "Link copied. Paste it into a comment: it opens with your numbers.",
+    "share.title": "A permanent fund for Ukrainian pensioners: one dollar, forever",
+    "share.text": "I'd give a few dollars a month to a permanent fund for Ukrainian pensioners. The capital is never spent. Check the math:"
   },
 
   uk: {
@@ -86,7 +89,7 @@ window.I18N = {
     "form.otherPh": "Сума в $",
     "form.optional": "Необов'язково",
     "form.employer": "Роботодавець <small>(щоб оцінити можливість corporate matching)</small>",
-    "form.bigger": "Я готовий обговорити більший внесок або внесок від компанії",
+    "form.bigger": "Можу обговорити більший внесок або внесок від компанії",
     "form.source": "Звідки ви про нас дізналися?",
     "form.src.friend": "Від друга",
     "form.src.social": "Інші соцмережі",
@@ -117,7 +120,7 @@ window.I18N = {
     "dollar.fee": "<strong>3¢ – платіжні комісії.</strong> Їх беруть банки й платіжні сервіси.",
     "dollar.yieldTitle": "Щороку дохід від капіталу йде на:",
     "dollar.y1": "<strong>Щомісячні виплати</strong> пенсіонерам.",
-    "dollar.y2": "<strong>1% капіталу</strong> на управління капіталом і програмою.",
+    "dollar.y2": "<strong>1% капіталу на рік</strong> на управління капіталом і програмою. Береться з доходу, а не з капіталу: із $100 000 це $1 000 на рік.",
     "dollar.y3": "<strong>0,5% капіталу</strong> в резерв, щоб виплати могли зростати.",
     "dollar.y4": "<strong>Резерв</strong> на допомогу на поховання.",
     "commit.title": "Наші зобов'язання",
@@ -167,7 +170,22 @@ window.I18N = {
     "faq.a11": "Щоб порахувати реальний інтерес і один раз написати вам, якщо фонд запуститься. Більше ні для чого.",
     "faq.more": "Не знайшли свого запитання? <a href=\"principles.html\">Прочитайте принципи</a> або запитайте на Reddit.",
     "footer.principles": "Принципи",
-    "footer.faq": "Запитання"
+    "footer.faq": "Запитання",
+    "calc.shareBtn": "Поділитися розрахунком",
+    "calc.shareCopied": "Посилання скопійовано. Вставте його в коментар: воно відкриється з вашими цифрами.",
+    "ex.title": "Приклад: капітал $1 000 000 за один рік",
+    "ex.good": "Хороший рік: дохід $100 000",
+    "ex.bad": "Поганий рік: дохід $20 000",
+    "ex.r1": "Виплати і резерв на поховання (3,5%)",
+    "ex.r2": "Управління капіталом і програмою (1%)",
+    "ex.r3": "Резерв на зростання виплат (0,5%)",
+    "ex.r4": "Разом витрачено",
+    "ex.r5": "Лишилось у фонді / взято з резерву",
+    "ex.note": "Фонд щороку витрачає ту саму заплановану частку (у цій моделі 5% капіталу). У хороший рік решта лишається у фонді, у поганий різницю покриває резерв (п. 5.7–5.9). $35 000 на рік – це приблизно 125 пенсіонерів по 1 000 грн на місяць. Точну частку визначить інвестиційна політика.",
+    "thanks.shareTitle": "Або поділіться:",
+    "thanks.more": "Інше…",
+    "share.title": "Вічний фонд для українських пенсіонерів: один долар, назавжди",
+    "share.text": "Кілька доларів на місяць – у вічний фонд для українських пенсіонерів. Капітал ніколи не витрачається. Перевірте розрахунок:"
   },
 
   es: {
@@ -263,7 +281,7 @@ window.I18N = {
     "dollar.fee": "<strong>3¢ – comisiones de pago.</strong> Las cobran bancos y servicios de pago.",
     "dollar.yieldTitle": "Cada año, el rendimiento del capital paga:",
     "dollar.y1": "<strong>Pagos mensuales</strong> a pensionistas.",
-    "dollar.y2": "<strong>1% del capital</strong> para gestionar el capital y el programa.",
+    "dollar.y2": "<strong>1% del capital al año</strong> para gestionar el capital y el programa. Sale del rendimiento, no del capital: con $100.000 son $1.000 al año.",
     "dollar.y3": "<strong>0,5% del capital</strong> reservado para que los pagos puedan crecer.",
     "dollar.y4": "<strong>Una reserva</strong> para ayuda de sepelio.",
     "commit.title": "Nuestros compromisos",
@@ -313,6 +331,21 @@ window.I18N = {
     "faq.a11": "Para contar el interés real y escribirte una vez si el fondo se pone en marcha. Nada más.",
     "faq.more": "¿No encuentras tu pregunta? <a href=\"principles.html\">Lee los principios</a> o pregunta en Reddit.",
     "footer.principles": "Principios",
-    "footer.faq": "Preguntas"
+    "footer.faq": "Preguntas",
+    "calc.shareBtn": "Compartir este cálculo",
+    "calc.shareCopied": "Enlace copiado. Pégalo en un comentario: se abre con tus cifras.",
+    "ex.title": "Ejemplo: $1.000.000 de capital durante un año",
+    "ex.good": "Buen año: rinde $100.000",
+    "ex.bad": "Mal año: rinde $20.000",
+    "ex.r1": "Pagos y reserva de sepelio (3,5%)",
+    "ex.r2": "Gestión del capital y del programa (1%)",
+    "ex.r3": "Reserva para el crecimiento de los pagos (0,5%)",
+    "ex.r4": "Gastado en total",
+    "ex.r5": "Queda en el fondo / sale de la reserva",
+    "ex.note": "El fondo gasta cada año la misma parte prevista (en este modelo, el 5% del capital). En un buen año el resto se queda en el fondo; en un mal año la diferencia sale de la reserva (cl. 5.7–5.9). $35.000 al año son unos 125 pensionistas a 1.000 UAH al mes. La parte exacta la fijará la política de inversión.",
+    "thanks.shareTitle": "O compártelo:",
+    "thanks.more": "Más…",
+    "share.title": "Un fondo permanente para pensionistas ucranianos: un dólar, para siempre",
+    "share.text": "Donaría unos dólares al mes a un fondo permanente para pensionistas ucranianos. El capital nunca se gasta. Revisa las cuentas:"
   }
 };

@@ -12,6 +12,20 @@
     } catch (e) { return null; }
   }
 
+  // ---------- Visit counter (GoatCounter, no cookies; off until a code is set in config.js) ----------
+  if (cfg.GOATCOUNTER_CODE) {
+    var gc = document.createElement("script");
+    gc.async = true;
+    gc.src = "https://gc.zgo.at/count.js";
+    gc.dataset.goatcounter = "https://" + cfg.GOATCOUNTER_CODE + ".goatcounter.com/count";
+    document.head.appendChild(gc);
+  }
+  function track(name) {
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({ path: name, title: name, event: true });
+    }
+  }
+
   // ---------- Language ----------
   // English is the source text in index.html; collect it once.
   var textNodes = document.querySelectorAll("[data-i18n]");
@@ -89,6 +103,14 @@
   inputs.fx.value = cfg.DEFAULT_FX;
   inputs.payout.value = cfg.DEFAULT_PAYOUT;
 
+  // A shared calculation link carries its values in the URL (see shareCalc below).
+  var q = new URLSearchParams(location.search);
+  [["gm", "monthly"], ["gn", "months"], ["go", "once"], ["r", "r"], ["fx", "fx"], ["pay", "payout"]].forEach(function (pair) {
+    var v = q.get(pair[0]);
+    if (v !== null && v !== "" && isFinite(+v)) inputs[pair[1]].value = v;
+  });
+  if (q.get("mode") === "once") mode = "once";
+
   function calc() {
     var gift = mode === "monthly"
       ? +inputs.monthly.value * +inputs.months.value
@@ -153,12 +175,38 @@
     b.addEventListener("click", function () { inputs.r.value = b.dataset.r; calc(); });
   });
   Object.keys(inputs).forEach(function (k) { inputs[k].addEventListener("input", calc); });
+  if (mode === "once") document.querySelector('[data-mode="once"]').click();
+
+  function flash(el, text) {
+    el.textContent = text;
+    el.hidden = false;
+  }
+
+  $("shareCalc").addEventListener("click", function () {
+    var params = new URLSearchParams({ lang: lang, mode: mode, r: inputs.r.value, fx: inputs.fx.value, pay: inputs.payout.value });
+    if (mode === "monthly") { params.set("gm", inputs.monthly.value); params.set("gn", inputs.months.value); }
+    else params.set("go", inputs.once.value);
+    var url = location.origin + location.pathname + "?" + params.toString() + "#calculator";
+    track("share-calculation");
+    if (navigator.share && matchMedia("(pointer: coarse)").matches) {
+      navigator.share({ title: document.title, url: url }).catch(function () {});
+      return;
+    }
+    (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject())
+      .then(function () { flash($("shareCalcNote"), t("calc.shareCopied")); })
+      .catch(function () { flash($("shareCalcNote"), url); });
+  });
 
   // ---------- Referral ----------
   var params = new URLSearchParams(location.search);
   var refIn = params.get("ref");
   if (refIn && /^[A-Za-z0-9]{4,12}$/.test(refIn)) store("refBy", refIn);
   if (params.get("confirmed") === "1") $("confirmedBanner").hidden = false;
+  // Remember which post or campaign the visitor first came from (?utm_source=…&utm_campaign=…).
+  if (params.get("utm_source") && !store("utmSource")) {
+    store("utmSource", params.get("utm_source").slice(0, 60));
+    store("utmCampaign", (params.get("utm_campaign") || "").slice(0, 60));
+  }
 
   // ---------- Counter (real number from the sheet only) ----------
   var counterValue = null;
@@ -209,7 +257,21 @@
   function showThanks(refCode) {
     form.hidden = true;
     $("thanks").hidden = false;
-    $("refLink").value = location.origin + location.pathname + "?ref=" + refCode;
+    var link = location.origin + location.pathname + "?ref=" + refCode;
+    $("refLink").value = link;
+    var text = t("share.text");
+    $("shReddit").href = "https://www.reddit.com/submit?url=" + encodeURIComponent(link) + "&title=" + encodeURIComponent(t("share.title"));
+    $("shTelegram").href = "https://t.me/share/url?url=" + encodeURIComponent(link) + "&text=" + encodeURIComponent(text);
+    $("shWhatsApp").href = "https://wa.me/?text=" + encodeURIComponent(text + " " + link);
+    ["shReddit", "shTelegram", "shWhatsApp"].forEach(function (id) {
+      $(id).addEventListener("click", function () { track("share-" + id.slice(2).toLowerCase()); });
+    });
+    if (navigator.share) {
+      $("shNative").hidden = false;
+      $("shNative").addEventListener("click", function () {
+        navigator.share({ title: t("share.title"), text: text, url: link }).catch(function () {});
+      });
+    }
   }
 
   $("copyRef").addEventListener("click", function () {
@@ -242,6 +304,8 @@
       bigger: fd.get("bigger") ? "yes" : "",
       source: fd.get("source") || "",
       refBy: store("refBy") || "",
+      utmSource: store("utmSource") || "",
+      utmCampaign: store("utmCampaign") || "",
       lang: lang,
       website: fd.get("website") || ""
     });
@@ -253,6 +317,7 @@
       .then(function (r) { return r.json(); })
       .then(function (d) {
         if (!d.ok) throw new Error(d.error || t("err.network"));
+        track("signup-submitted");
         showThanks(d.refCode);
       })
       .catch(function (err) {

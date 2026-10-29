@@ -4,6 +4,16 @@
   var BRAND = { en: "Warm Hands", uk: "Тепло рук", es: "Manos Cálidas" };
   var BACK = { en: "← Back to the site", uk: "← Повернутися на сайт", es: "← Volver a la web" };
 
+  var gcCode = window.SITE_CONFIG.GOATCOUNTER_CODE;
+  if (gcCode) {
+    var gc = document.createElement("script");
+    gc.async = true;
+    gc.src = "https://gc.zgo.at/count.js";
+    gc.dataset.goatcounter = "https://" + gcCode + ".goatcounter.com/count";
+    document.head.appendChild(gc);
+    document.querySelectorAll(".if-analytics").forEach(function (el) { el.hidden = false; });
+  }
+
   document.querySelectorAll(".contact-email").forEach(function (a) {
     a.href = "mailto:" + window.SITE_CONFIG.CONTACT_EMAIL;
     a.textContent = window.SITE_CONFIG.CONTACT_EMAIL;
