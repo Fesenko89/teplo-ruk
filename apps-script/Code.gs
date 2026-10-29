@@ -1,5 +1,5 @@
 /**
- * Warm Hands (Teplo Ruk) — sign-up backend.
+ * Warm Hands (Teplo Ruk) – sign-up backend.
  * Google Apps Script bound to a Google Sheet. See SETUP.md.
  *
  *   POST /exec               → new sign-up, sends a confirmation email
@@ -16,24 +16,24 @@ var TEXT = {
   en: {
     subject: 'Please confirm your sign-up',
     hi: 'Hi,',
-    thanks: 'Thanks for saying you would support <b>Warm Hands</b> — a permanent fund for Ukrainian pensioners.',
+    thanks: 'Thanks for saying you would support <b>Warm Hands</b> – a permanent fund for Ukrainian pensioners.',
     button: 'Confirm my sign-up',
     note: 'Only confirmed sign-ups are counted. We do not accept money yet: the charity is being registered. We will email you only if the fund launches.',
     ignore: "If you didn't sign up, just ignore this email.",
     privacy: 'Privacy Policy',
-    okTitle: "Thank you — you're confirmed.", okText: 'Your sign-up now counts.',
+    okTitle: "Thank you – you're confirmed.", okText: 'Your sign-up now counts.',
     badTitle: 'This link is not valid.', badText: 'Please sign up again on the site.',
     back: 'Back to the site', brand: 'Warm Hands'
   },
   uk: {
     subject: 'Підтвердіть, будь ласка, вашу заявку',
     hi: 'Вітаємо!',
-    thanks: 'Дякуємо, що готові підтримати <b>«Тепло рук»</b> — вічний фонд для українських пенсіонерів.',
+    thanks: 'Дякуємо, що готові підтримати <b>«Тепло рук»</b> – вічний фонд для українських пенсіонерів.',
     button: 'Підтвердити заявку',
     note: 'Зараховуються лише підтверджені заявки. Гроші ми поки не приймаємо: фонд реєструється. Ми напишемо вам лише тоді, коли фонд запуститься.',
     ignore: 'Якщо ви не залишали заявку, просто проігноруйте цей лист.',
     privacy: 'Політика конфіденційності',
-    okTitle: 'Дякуємо — заявку підтверджено.', okText: 'Тепер вона зарахована.',
+    okTitle: 'Дякуємо – заявку підтверджено.', okText: 'Тепер вона зарахована.',
     badTitle: 'Посилання недійсне.', badText: 'Будь ласка, залиште заявку на сайті ще раз.',
     back: 'Повернутися на сайт', brand: 'Тепло рук'
   },
@@ -152,7 +152,7 @@ function sendConfirmation_(email, token, lang) {
   var url = ScriptApp.getService().getUrl() + '?action=confirm&token=' + encodeURIComponent(token);
   MailApp.sendEmail({
     to: email,
-    name: T.brand + ' — One Dollar. Forever.',
+    name: T.brand + ' – One Dollar. Forever.',
     subject: T.subject,
     htmlBody:
       '<p>' + T.hi + '</p>' +
