@@ -7,6 +7,12 @@
   <meta name="description" content="Warm Hands (Teplo Ruk): a permanent fund for Ukrainian pensioners. The capital is never spent; its yield pays pensioners every month. Early stage: we are measuring interest, not taking money.">
   <meta property="og:title" content="Warm Hands – One Dollar. Forever.">
   <meta property="og:description" content="They worked their whole lives. Your gift will work for them forever.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fesenko89.github.io/teplo-ruk/">
+  <meta property="og:image" content="https://fesenko89.github.io/teplo-ruk/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +20,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="status-bar" data-i18n-html="bar"><strong>Early-stage initiative.</strong> The charity is being registered. We do not accept money yet.</div>
+  <div class="status-bar" data-i18n-html="bar"><strong>Early-stage initiative.</strong> The charity is not registered yet. We do not accept money.</div>
 
   <header class="site-header">
     <div class="container header-inner">
@@ -108,6 +114,8 @@
           </div>
         </div>
 
+        <p class="fine calc-note" data-i18n="calc.note">Each year the fund can take only a limited share of the capital. It's a safety limit, not a guaranteed income (Charter, cl. 5.7). Payouts grow from the 0.5% reserve and when money is freed up (cl. 7.5).</p>
+
         <details class="math">
           <summary data-i18n="math.summary">See the formula</summary>
           <pre data-i18n="math.pre">w = r − 1% − 0.5%
@@ -122,6 +130,46 @@ C = P × (1 + 1.25 × w) / w / (0.90 × 0.965)
 C is the capital needed to support one pensioner forever.</pre>
           <p><span data-i18n="math.q">Think a number is wrong?</span> <a id="redditLink" href="#" target="_blank" rel="noopener" data-i18n="math.link">Tell us where the math is wrong</a> <span data-i18n="math.tail">– we'd rather hear it now.</span></p>
         </details>
+      </div>
+    </section>
+
+    <section id="dollar" class="section">
+      <div class="container">
+        <h2 data-i18n="dollar.title">Where each dollar goes</h2>
+        <p class="section-lead" data-i18n="dollar.lead">We show this split before you give, as the Charter requires (cl. 4.6).</p>
+        <div class="split" aria-hidden="true">
+          <div class="split-cap" style="flex:87">87¢</div>
+          <div class="split-ops" style="flex:10">10¢</div>
+          <div class="split-fee" style="flex:3"></div>
+        </div>
+        <ul class="split-legend">
+          <li><i class="dot dot-cap"></i><span data-i18n-html="dollar.cap"><strong>87¢ – permanent capital.</strong> Never spent.</span></li>
+          <li><i class="dot dot-ops"></i><span data-i18n-html="dollar.ops"><strong>10¢ – running the fund.</strong> Staff, accounting, audit, reports.</span></li>
+          <li><i class="dot dot-fee"></i><span data-i18n-html="dollar.fee"><strong>3¢ – payment fees.</strong> Charged by banks and payment services.</span></li>
+        </ul>
+        <h3 class="sub" data-i18n="dollar.yieldTitle">Every year, the capital's yield pays for:</h3>
+        <ul class="yield-list">
+          <li data-i18n-html="dollar.y1"><strong>Monthly payouts</strong> to pensioners.</li>
+          <li data-i18n-html="dollar.y2"><strong>1% of the capital</strong> for managing the capital and the program.</li>
+          <li data-i18n-html="dollar.y3"><strong>0.5% of the capital</strong> kept back so payouts can grow.</li>
+          <li data-i18n-html="dollar.y4"><strong>A reserve</strong> for funeral assistance.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="commitments" class="section section-alt">
+      <div class="container">
+        <h2 data-i18n="commit.title">Our commitments</h2>
+        <p class="section-lead" data-i18n="commit.lead">Taken from the draft Charter. Clause numbers are in brackets.</p>
+        <div class="commit-grid">
+          <div><h3 data-i18n="commit.t1">The capital is never spent</h3><p data-i18n="commit.p1">Only the income from it is paid out. (cl. 5.3)</p></div>
+          <div><h3 data-i18n="commit.t2">Pensioners' money stays with pensioners</h3><p data-i18n="commit.p2">It is never used for other programs. (cl. 2.5, 4.9)</p></div>
+          <div><h3 data-i18n="commit.t3">The founder doesn't hold the money</h3><p data-i18n="commit.p3">A licensed bank or asset manager does. (cl. 5.5, 10.3)</p></div>
+          <div><h3 data-i18n="commit.t4">Public reports</h3><p data-i18n="commit.p4">Income, capital, fees, admin costs, reserves, number of recipients and payouts. Plus an independent audit. (cl. 11.2, 11.3)</p></div>
+          <div><h3 data-i18n="commit.t5">Oversight</h3><p data-i18n="commit.p5">A supervisory board, disclosed conflicts of interest, published director's pay. (cl. 9, 10)</p></div>
+          <div><h3 data-i18n="commit.t6">No false promises</h3><p data-i18n="commit.p6">Donors get nothing back. No one is promised a fixed payment for life. (cl. 2.4, 6.7)</p></div>
+        </div>
+        <p><a href="principles.html" class="more" data-i18n="commit.more">Read the fund's principles →</a></p>
       </div>
     </section>
 
@@ -143,11 +191,38 @@ C is the capital needed to support one pensioner forever.</pre>
       <div class="container">
         <h2 data-i18n="status.title">Honest status</h2>
         <ul class="status-list">
-          <li data-i18n-html="status.l1"><strong>Early-stage initiative.</strong> The charity is being registered. We do not accept money yet – there are no payment buttons on this site.</li>
+          <li data-i18n-html="status.l1"><strong>Early-stage initiative.</strong> The charity is not registered yet. We do not accept money – there are no payment buttons on this site.</li>
           <li data-i18n-html="status.l2"><strong>This is a test of interest.</strong> If enough people confirm they'd give, we register the charity and open payments. If not, the project closes and your data is deleted.</li>
           <li data-i18n-html="status.l3"><strong>No tax benefits</strong> are available at this stage.</li>
           <li data-i18n="status.l4">We don't collect any data about pensioners at this stage.</li>
         </ul>
+
+        <h3 class="sub" data-i18n="road.title">What happens next</h3>
+        <ol class="road">
+          <li class="now"><span data-i18n="road.1">Interest test</span> <em data-i18n="road.now">now</em></li>
+          <li data-i18n="road.2">If there's enough interest, we register the charity</li>
+          <li data-i18n="road.3">Donations open</li>
+          <li data-i18n="road.4">First payouts to pensioners</li>
+          <li data-i18n="road.5">First public report</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="faq" class="section section-alt">
+      <div class="container narrow">
+        <h2 data-i18n="faq.title">Questions people ask</h2>
+          <details class="faq-item"><summary data-i18n="faq.q1">What if the hryvnia falls or inflation rises?</summary><p data-i18n="faq.a1">The calculator uses real yield, which is yield after inflation. Payouts are in hryvnias, so the fund can adjust them under published program rules. That's why you can test a pessimistic 3%.</p></details>
+          <details class="faq-item"><summary data-i18n="faq.q2">What if Ukraine can't pay its bonds?</summary><p data-i18n="faq.a2">That risk is real. Government bonds are the main holding, not the only one. The investment policy limits risk and requires diversification (cl. 5.6). The fund doesn't promise any yield (cl. 4.7).</p></details>
+          <details class="faq-item"><summary data-i18n="faq.q3">Who controls the money?</summary><p data-i18n="faq.a3">A licensed bank or asset manager, not the founder (cl. 5.5, 10.3). A supervisory board oversees the director. Any deal with related people must be approved and published (cl. 10).</p></details>
+          <details class="faq-item"><summary data-i18n="faq.q4">Who gets the payouts?</summary><p data-i18n="faq.a4">Pensioners with long work records and very small pensions, chosen by published criteria that apply equally to everyone (cl. 3). They confirm their details every six months (cl. 6.4). If money is short, there's a waiting list (cl. 6.3).</p></details>
+          <details class="faq-item"><summary data-i18n="faq.q5">What happens when a pensioner dies?</summary><p data-i18n="faq.a5">Payments stop. The freed money goes to other participants or raises their payouts (cl. 7.3–7.5). It doesn't pass to heirs (cl. 7.2). The fund may also help with the funeral (cl. 7.6).</p></details>
+          <details class="faq-item"><summary data-i18n="faq.q6">How much goes to running the fund?</summary><p data-i18n="faq.a6">10% of each gift, plus 1% of the capital a year. We show this before you give (cl. 4.6). The director's salary is published in the reports (cl. 9.9).</p></details>
+          <details class="faq-item"><summary data-i18n="faq.q7">Can my gift be used for something else?</summary><p data-i18n="faq.a7">No. Money given for pensioners is never used for other programs (cl. 2.5, 4.9).</p></details>
+          <details class="faq-item"><summary data-i18n="faq.q8">Can I get my money back?</summary><p data-i18n="faq.a8">No. It's a donation: you don't get anything back, now or later (cl. 2.4).</p></details>
+          <details class="faq-item"><summary data-i18n="faq.q9">Is it tax-deductible?</summary><p data-i18n="faq.a9">Not at this stage.</p></details>
+          <details class="faq-item"><summary data-i18n="faq.q10">Why not just give to a pensioner directly?</summary><p data-i18n="faq.a10">Direct help runs out. Here the capital stays, and its yield keeps paying year after year.</p></details>
+          <details class="faq-item"><summary data-i18n="faq.q11">Why do you need my email if you don't take money?</summary><p data-i18n="faq.a11">To count real interest, and to write to you once if the fund launches. Nothing else.</p></details>
+        <p class="fine" data-i18n-html="faq.more">Didn't find your question? <a href="principles.html">Read the principles</a> or ask on Reddit.</p>
       </div>
     </section>
 
@@ -216,8 +291,8 @@ C is the capital needed to support one pensioner forever.</pre>
 
   <footer class="site-footer">
     <div class="container">
-      <p data-i18n="footer.p">Warm Hands (Teplo Ruk) – One Dollar. Forever. An early-stage initiative. The charity is being registered; we do not accept money yet.</p>
-      <p><a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a> · <a id="contactLink" href="#" data-i18n="footer.contact">Contact</a></p>
+      <p data-i18n="footer.p">Warm Hands (Teplo Ruk) – One Dollar. Forever. An early-stage initiative. The charity is not registered yet; we do not accept money.</p>
+      <p><a href="principles.html" data-i18n="footer.principles">Principles</a> · <a href="#faq" data-i18n="footer.faq">FAQ</a> · <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a> · <a id="contactLink" href="#" data-i18n="footer.contact">Contact</a></p>
     </div>
   </footer>
 

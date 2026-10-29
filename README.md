@@ -6,7 +6,11 @@
 ## Файли
 
 - `index.html` — сторінка: hero, механізм, калькулятор, хто за цим стоїть, статус, форма.
-- `privacy.html` — Privacy Policy (GDPR).
+- `principles.html` — принципи фонду: проєкт Статуту простою мовою (EN/UA/ES).
+- `privacy.html` — Privacy Policy (GDPR), EN/UA/ES.
+- `pages.js` — перемикач мов для `principles.html` і `privacy.html`.
+- `i18n.js` — українські та іспанські переклади головної сторінки.
+- `og.png` — картинка-прев'ю для Reddit/Telegram.
 - `config.js` — **налаштування**: URL бекенду форми, email, Reddit, припущення калькулятора за замовчуванням.
 - `app.js` — калькулятор, форма, лічильник, реферальні посилання.
 - `styles.css` — стилі.

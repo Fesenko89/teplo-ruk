@@ -194,3 +194,54 @@ input[type="email"], input[type="text"], input[type="number"], select {
   .hero-actions .btn { flex: 1 1 100%; }
   .brand { font-size: .95rem; }
 }
+
+/* Dollar split */
+.split { display: flex; height: 56px; border-radius: 12px; overflow: hidden; margin: 26px 0 16px; font-weight: 700; }
+.split > div { display: flex; align-items: center; justify-content: center; color: #fff; min-width: 0; }
+.split-cap { background: var(--navy); color: var(--accent) !important; font-size: 1.2rem; }
+.split-ops { background: #6b7a99; }
+.split-fee { background: #c3c8d4; }
+.split-legend, .yield-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.split-legend li { display: flex; gap: 10px; align-items: baseline; }
+.dot { flex: none; width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.dot-cap { background: var(--navy); } .dot-ops { background: #6b7a99; } .dot-fee { background: #c3c8d4; }
+@media (prefers-color-scheme: dark) { .split-cap, .dot-cap { background: #2e4a8c; } }
+.yield-list li { padding-left: 20px; position: relative; }
+.yield-list li::before { content: ""; position: absolute; left: 0; top: .6em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent-dark); }
+.sub { margin-top: 36px; font-size: 1.25rem; }
+.calc-note { margin-top: 16px; }
+
+/* Commitments */
+.commit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+.commit-grid > div { background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: var(--radius); padding: 18px 20px; }
+.commit-grid h3 { font-size: 1.1rem; }
+.commit-grid p { margin: 0; color: var(--muted); font-size: .95rem; }
+.more { font-weight: 600; }
+
+/* Roadmap */
+.road { list-style: none; padding: 0; margin: 16px 0 0; counter-reset: road; display: grid; gap: 10px; }
+.road li { counter-increment: road; display: flex; align-items: center; gap: 12px; color: var(--muted); }
+.road li::before {
+  content: counter(road); flex: none; display: grid; place-items: center; width: 30px; height: 30px;
+  border-radius: 50%; border: 2px solid var(--border); font-weight: 700; font-size: .9rem;
+}
+.road li.now { color: var(--text); font-weight: 600; }
+.road li.now::before { background: var(--accent); border-color: var(--accent); color: #15192b; }
+.road em { font-style: normal; font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; background: var(--navy); color: var(--accent); padding: 2px 8px; border-radius: 999px; }
+
+/* FAQ */
+.faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 10px; }
+.faq-item summary { cursor: pointer; padding: 16px 18px; font-weight: 600; list-style: none; position: relative; padding-right: 44px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; position: absolute; right: 18px; top: 12px; font-size: 1.4rem; color: var(--muted); }
+.faq-item[open] summary::after { content: "–"; }
+.faq-item p { margin: 0; padding: 0 18px 16px; color: var(--muted); }
+
+/* Principles page */
+.policy h2 { font-size: 1.35rem; margin-top: 1.6em; }
+.draft-note { background: var(--warn-bg); border-radius: 10px; padding: 12px 16px; }
+.cl { color: var(--muted); font-size: .85em; white-space: nowrap; }
+
+@media (max-width: 760px) {
+  .commit-grid { grid-template-columns: 1fr; }
+}

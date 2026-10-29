@@ -23,7 +23,7 @@
   </header>
 
   <main class="section">
-    <article class="container narrow policy" data-policy="en" lang="en">
+    <article class="container narrow policy" data-page-lang="en" lang="en">
       <h1>Privacy Policy</h1>
       <p class="fine">Last updated: 29 October 2026</p>
       <h2>Who we are</h2>
@@ -53,7 +53,7 @@
       <p><a href="./">← Back to the site</a></p>
     </article>
 
-    <article class="container narrow policy" data-policy="uk" lang="uk" hidden>
+    <article class="container narrow policy" data-page-lang="uk" lang="uk" hidden>
       <h1>Політика конфіденційності</h1>
       <p class="fine">Оновлено: 29 жовтня 2026 року</p>
       <h2>Хто ми</h2>
@@ -83,7 +83,7 @@
       <p><a href="./">← Повернутися на сайт</a></p>
     </article>
 
-    <article class="container narrow policy" data-policy="es" lang="es" hidden>
+    <article class="container narrow policy" data-page-lang="es" lang="es" hidden>
       <h1>Política de privacidad</h1>
       <p class="fine">Última actualización: 29 de octubre de 2026</p>
       <h2>Quiénes somos</h2>
@@ -115,30 +115,6 @@
   </main>
 
   <script src="config.js"></script>
-  <script>
-    (function () {
-      var BRAND = { en: "Warm Hands", uk: "Тепло рук", es: "Manos Cálidas" };
-      var TITLE = { en: "Privacy Policy", uk: "Політика конфіденційності", es: "Política de privacidad" };
-      document.querySelectorAll(".contact-email").forEach(function (a) {
-        a.href = "mailto:" + window.SITE_CONFIG.CONTACT_EMAIL;
-        a.textContent = window.SITE_CONFIG.CONTACT_EMAIL;
-      });
-      function setLang(lang) {
-        document.querySelectorAll("[data-policy]").forEach(function (el) { el.hidden = el.dataset.policy !== lang; });
-        document.querySelectorAll("[data-lang]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
-        document.querySelector(".brand-name").textContent = BRAND[lang];
-        document.title = TITLE[lang] + " – " + BRAND[lang];
-        document.documentElement.lang = lang;
-        try { localStorage.setItem("lang", lang); } catch (e) {}
-      }
-      document.querySelectorAll("[data-lang]").forEach(function (b) {
-        b.addEventListener("click", function () { setLang(b.dataset.lang); });
-      });
-      var saved = null;
-      try { saved = localStorage.getItem("lang"); } catch (e) {}
-      var fromUrl = new URLSearchParams(location.search).get("lang");
-      setLang(BRAND[fromUrl] ? fromUrl : BRAND[saved] ? saved : "en");
-    })();
-  </script>
+  <script src="pages.js"></script>
 </body>
 </html>
