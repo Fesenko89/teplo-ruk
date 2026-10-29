@@ -1,178 +1,222 @@
 <!doctype html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Тепло рук — благодійний фонд</title>
-  <meta name="description" content="Благодійний фонд «Тепло рук»: довгострокова підтримка людей пенсійного віку в Україні через благодійний ендавмент.">
+  <title>Warm Hands — One Dollar. Forever.</title>
+  <meta name="description" content="Warm Hands (Teplo Ruk): a permanent fund for Ukrainian pensioners. The capital is never spent; its yield pays pensioners every month. Early stage: we are measuring interest, not taking money.">
+  <meta property="og:title" content="Warm Hands — One Dollar. Forever.">
+  <meta property="og:description" content="They worked their whole lives. Your gift will work for them forever.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="status-bar">
+    <strong>Early-stage initiative.</strong> The charity is being registered. We do not accept money yet.
+  </div>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#top" class="brand">
-        <img src="favicon.svg" alt="" width="36" height="36">
-        <span data-i18n="brand">Тепло рук</span>
-      </a>
-      <nav class="nav" id="nav">
-        <a href="#mission" data-i18n="nav.mission">Місія</a>
-        <a href="#endowment" data-i18n="nav.endowment">Ендавмент</a>
-        <a href="#programs" data-i18n="nav.programs">Програми</a>
-        <a href="#transparency" data-i18n="nav.transparency">Прозорість</a>
-        <a href="#support" data-i18n="nav.support">Підтримати</a>
-      </nav>
-      <div class="lang" role="group" aria-label="Language">
-        <button type="button" data-lang="uk">UA</button>
-        <button type="button" data-lang="en">EN</button>
-        <button type="button" data-lang="es">ES</button>
-      </div>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="#top" class="brand"><img src="favicon.svg" alt="" width="30" height="30"> Warm Hands <span class="brand-sub">Teplo Ruk</span></a>
+      <a href="#join" class="btn btn-small">Join the list</a>
     </div>
   </header>
 
   <main id="top">
+    <div id="confirmedBanner" class="banner" hidden>
+      <div class="container">Thank you — your sign-up is confirmed and counted.</div>
+    </div>
+
     <section class="hero">
-      <div class="container hero-inner">
-        <p class="badge" data-i18n="hero.badge">Фонд у процесі створення</p>
-        <h1 data-i18n="hero.title">Турбота, яка триває роками</h1>
-        <p class="lead" data-i18n="hero.lead">Благодійний фонд «Тепло рук» створює ендавмент — постійний капітал, дохід від якого щороку спрямовується на допомогу людям пенсійного віку в Україні.</p>
+      <div class="container">
+        <p class="tagline">One Dollar. Forever.</p>
+        <h1>They worked their whole lives.<br><span>Your gift will work for them forever.</span></h1>
+        <p class="lead">A permanent fund for Ukrainian pensioners with long work records and very small pensions. The capital is never spent. Only its yield is paid out — every month, for as long as the fund exists.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#support" data-i18n="hero.cta1">Підтримати фонд</a>
-          <a class="btn btn-ghost" href="#endowment" data-i18n="hero.cta2">Як це працює</a>
+          <a href="#join" class="btn">I'd give monthly — count me in</a>
+          <a href="#calculator" class="btn btn-ghost">Check the math</a>
         </div>
+        <p class="counter-line" id="counterLine" hidden><span id="counterValue"></span> confirmed sign-ups so far</p>
       </div>
     </section>
 
-    <section id="mission" class="section">
-      <div class="container two-col">
-        <div>
-          <h2 data-i18n="mission.title">Наша місія</h2>
-          <p data-i18n="mission.p1">Основна мета Фонду — довгострокова благодійна допомога людям пенсійного віку в Україні. Ми хочемо, щоб підтримка не закінчувалася разом із черговим збором, а була стабільною та передбачуваною.</p>
-          <p data-i18n="mission.p2">Для цього Фонд формує благодійний ендавмент і належно ним управляє: основна сума зберігається, а на допомогу спрямовується дохід від її управління.</p>
-        </div>
-        <ul class="facts">
-          <li><strong data-i18n="mission.f1t">Головний напрям</strong><span data-i18n="mission.f1">Допомога пенсіонерам — пріоритет, який не може фінансуватися за рахунок інших програм.</span></li>
-          <li><strong data-i18n="mission.f2t">Неприбутковість</strong><span data-i18n="mission.f2">Доходи Фонду не розподіляються між засновниками чи керівниками — лише на статутні цілі.</span></li>
-          <li><strong data-i18n="mission.f3t">В Україні й за кордоном</strong><span data-i18n="mission.f3">Фонд приймає пожертви від людей та організацій з усього світу.</span></li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="endowment" class="section section-alt">
+    <section class="section">
       <div class="container">
-        <h2 data-i18n="endow.title">Як працює ендавмент</h2>
-        <p class="section-lead" data-i18n="endow.lead">Ендавмент — це благодійний капітал, який працює довго. Ваша пожертва не витрачається одразу, а стає джерелом допомоги на багато років.</p>
-        <ol class="steps">
-          <li>
-            <span class="step-num">1</span>
-            <h3 data-i18n="endow.s1t">Пожертва</h3>
-            <p data-i18n="endow.s1">Ви робите внесок до ендавменту. Кожна пожертва оформлюється належним чином відповідно до закону.</p>
-          </li>
-          <li>
-            <span class="step-num">2</span>
-            <h3 data-i18n="endow.s2t">Збереження капіталу</h3>
-            <p data-i18n="endow.s2">Основна сума не витрачається. Її передають в управління ліцензованій фінансовій установі за затвердженою інвестиційною політикою.</p>
-          </li>
-          <li>
-            <span class="step-num">3</span>
-            <h3 data-i18n="endow.s3t">Дохід — на допомогу</h3>
-            <p data-i18n="endow.s3">Дохід від управління капіталом щороку спрямовується на виплати людям пенсійного віку та на благодійні програми.</p>
-          </li>
+        <h2>How it works</h2>
+        <ol class="flow">
+          <li><span class="flow-n">1</span><div><strong>You give.</strong> Once, or a few dollars a month.</div></li>
+          <li><span class="flow-n">2</span><div><strong>It becomes permanent capital.</strong> Placed in Ukrainian government bonds. The capital itself is never spent.</div></li>
+          <li><span class="flow-n">3</span><div><strong>Only the yield is paid out.</strong> Every month, to pensioners — starting at 1,000 UAH per person, designed to grow over time.</div></li>
         </ol>
-        <div class="note">
-          <strong data-i18n="endow.noteT">Важливо знати</strong>
-          <p data-i18n="endow.note">Фонд не є інвестиційним фондом: пожертва не дає права на прибуток, частку в активах чи повернення внеску. Фонд не гарантує інвестиційної дохідності — річний розподіл коштів обмежується правилом, визначеним інвестиційною політикою, щоб капітал зберігався для майбутніх років.</p>
-        </div>
+        <p class="fine">You don't get anything back — this is a donation, not a financial product. What lasts forever is the capital, not a guaranteed lifetime payment to any one person.</p>
       </div>
     </section>
 
-    <section id="programs" class="section">
+    <section id="calculator" class="section section-alt">
       <div class="container">
-        <h2 data-i18n="prog.title">Наші програми</h2>
-        <div class="cards">
-          <article class="card card-main">
-            <h3 data-i18n="prog.c1t">Регулярна підтримка пенсіонерів</h3>
-            <p data-i18n="prog.c1">Регулярна грошова або інша допомога людям, які відповідають затвердженим критеріям програми. Розмір і кількість учасників визначаються доступним бюджетом, тому Фонд може вести список очікування.</p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="prog.c2t">Іменні програми</h3>
-            <p data-i18n="prog.c2">Цільові збори на користь конкретної людини. До початку збору ми оприлюднюємо мету, строки, порядок використання коштів і правила щодо залишку.</p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="prog.c3t">Допомога в скрутний час</h3>
-            <p data-i18n="prog.c3">Разова допомога на поховання отримувача, якщо така програма окремо затверджена та має фінансування.</p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="prog.c4t">Спорт, освіта, культура</h3>
-            <p data-i18n="prog.c4">Додаткові програми фінансуються лише з цільових або загальних пожертв і становлять не більше 10% річних видатків. Кошти, зібрані для пенсіонерів, на них не використовуються.</p>
-          </article>
+        <h2>The calculator</h2>
+        <p class="section-lead">No emotions, just the mechanism. Every assumption is open — set a pessimistic yield and see where the model breaks.</p>
+
+        <div class="calc">
+          <div class="calc-inputs">
+            <div class="seg" role="group" aria-label="Gift type">
+              <button type="button" data-mode="monthly" aria-pressed="true">Monthly</button>
+              <button type="button" data-mode="once" aria-pressed="false">One-time</button>
+            </div>
+
+            <div class="field" data-show="monthly">
+              <label for="monthlyAmt">Per month: <output id="monthlyOut">$10</output></label>
+              <input type="range" id="monthlyAmt" min="1" max="200" step="1" value="10">
+            </div>
+            <div class="field" data-show="monthly">
+              <label for="months">For how many months: <output id="monthsOut">12</output></label>
+              <input type="range" id="months" min="1" max="60" step="1" value="12">
+            </div>
+            <div class="field" data-show="once" hidden>
+              <label for="onceAmt">One-time gift: <output id="onceOut">$100</output></label>
+              <input type="range" id="onceAmt" min="5" max="5000" step="5" value="100">
+            </div>
+
+            <fieldset class="assumptions">
+              <legend>Assumptions (edit them)</legend>
+              <div class="seg seg-small" role="group" aria-label="Yield scenario">
+                <button type="button" data-r="3">3%</button>
+                <button type="button" data-r="5" aria-pressed="true">5%</button>
+                <button type="button" data-r="6">6%</button>
+              </div>
+              <label>Real yield, % per year <input type="number" id="r" step="0.1" min="0" max="20"></label>
+              <label>Exchange rate, UAH per $ <input type="number" id="fx" step="0.5" min="1"></label>
+              <label>Payout, UAH per month <input type="number" id="payout" step="50" min="1"></label>
+            </fieldset>
+          </div>
+
+          <div class="calc-result" aria-live="polite">
+            <p class="res-label">Your gift: <strong id="giftTotal"></strong></p>
+            <p class="res-main" id="resMain"></p>
+            <p class="res-cost" id="resCost"></p>
+            <p class="res-small" id="resSmall"></p>
+            <p class="res-warn" id="resWarn" hidden></p>
+            <a href="#join" class="btn btn-block">Count me in</a>
+          </div>
+        </div>
+
+        <details class="math">
+          <summary>See the formula</summary>
+          <pre>w = r − 1% − 0.5%
+    (payout rate = real yield − 1% administration − 0.5% reserved for payout growth)
+P = 12 × payout / fx
+    (one pensioner's yearly payout, in $)
+C = P × (1 + 1.25 × w) / w / (0.90 × 0.965)
+    1.25  → reserve for funeral assistance
+    0.90  → 10% of each gift funds the work of the fund
+    0.965 → 3.5% payment processing fees
+
+C is the capital needed to support one pensioner forever.</pre>
+          <p>Think a number is wrong? <a id="redditLink" href="#" target="_blank" rel="noopener">Tell us where the math is wrong</a> — we'd rather hear it now.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container about">
+        <div class="avatar" aria-hidden="true">
+          <img src="mykola.jpg" alt="" onerror="this.remove()">
+          <span>MF</span>
+        </div>
+        <div>
+          <h2>Who is behind this</h2>
+          <p><strong>Mykola Fesenko</strong> — an analyst at a Ukrainian law firm who builds AI tools. This is a personal initiative to find out whether a permanent fund for Ukrainian pensioners can work.</p>
+          <p><a id="redditProfile" href="#" target="_blank" rel="noopener">u/MykFesenko_ua on Reddit</a></p>
         </div>
       </div>
     </section>
 
     <section class="section section-alt">
       <div class="container">
-        <h2 data-i18n="choose.title">Ви обираєте, що підтримати</h2>
-        <p class="section-lead" data-i18n="choose.lead">Під час пожертви ви можете вказати, на що саме спрямувати кошти:</p>
-        <ul class="chips">
-          <li data-i18n="choose.o1">Довгостроковий ендавмент</li>
-          <li data-i18n="choose.o2">Загальна програма допомоги пенсіонерам</li>
-          <li data-i18n="choose.o3">Іменна програма конкретної людини</li>
-          <li data-i18n="choose.o4">Робота та адміністрування Фонду</li>
-          <li data-i18n="choose.o5">Інші затверджені програми</li>
+        <h2>Honest status</h2>
+        <ul class="status-list">
+          <li><strong>Early-stage initiative.</strong> The charity is being registered. We do not accept money yet — there are no payment buttons on this site.</li>
+          <li><strong>This is a test of interest.</strong> If 150–300 people confirm they'd give within 6 weeks, the charity gets registered and payments open. If not, the project closes and your data is deleted.</li>
+          <li><strong>No tax benefits</strong> are available at this stage.</li>
+          <li>We don't collect any data about pensioners at this stage.</li>
         </ul>
-        <p class="muted" data-i18n="choose.note">Якщо збір має пропорцію розподілу між ендавментом, допомогою та роботою Фонду, ми повідомляємо її до того, як ви зробите внесок.</p>
       </div>
     </section>
 
-    <section id="transparency" class="section">
-      <div class="container">
-        <h2 data-i18n="tr.title">Прозорість і принципи</h2>
-        <div class="principles">
-          <div><h3 data-i18n="tr.p1t">Цільове використання</h3><p data-i18n="tr.p1">Кожна пожертва використовується згідно з законом, Статутом і умовами, погодженими з благодійником.</p></div>
-          <div><h3 data-i18n="tr.p2t">Окремий облік</h3><p data-i18n="tr.p2">Ендавмент, операційні кошти, резерви та цільові збори обліковуються окремо.</p></div>
-          <div><h3 data-i18n="tr.p3t">Публічні звіти</h3><p data-i18n="tr.p3">Ми публікуємо надходження, стан ендавменту, інвестиційний результат, комісії, адміністративні витрати, кількість отримувачів і обсяг виплат.</p></div>
-          <div><h3 data-i18n="tr.p4t">Незалежний аудит</h3><p data-i18n="tr.p4">Діяльність Фонду проходить незалежну перевірку відповідно до закону та політик Фонду.</p></div>
-          <div><h3 data-i18n="tr.p5t">Захист даних</h3><p data-i18n="tr.p5">Персональні дані отримувачів і благодійників захищені відповідно до законодавства України та GDPR.</p></div>
-          <div><h3 data-i18n="tr.p6t">Без конфлікту інтересів</h3><p data-i18n="tr.p6">Угоди з пов'язаними особами розкриваються, схвалюються Наглядовою радою та оприлюднюються у звітах.</p></div>
-        </div>
+    <section id="join" class="section">
+      <div class="container narrow">
+        <h2>Join the list</h2>
+        <p class="section-lead">Tell us you'd give. No money now — we'll email you only if the fund launches.</p>
 
-        <h3 class="sub" data-i18n="gov.title">Управління Фондом</h3>
-        <div class="gov">
-          <div><strong data-i18n="gov.g1t">Загальні збори учасників</strong><span data-i18n="gov.g1">Вищий орган: Статут, стратегія, призначення Директора та Наглядової ради.</span></div>
-          <div><strong data-i18n="gov.g2t">Наглядова рада</strong><span data-i18n="gov.g2">Контроль діяльності, затвердження програм та інвестиційної політики.</span></div>
-          <div><strong data-i18n="gov.g3t">Директор</strong><span data-i18n="gov.g3">Поточне управління, збір пожертв, облік і звітність.</span></div>
-        </div>
-      </div>
-    </section>
+        <form id="signupForm" class="form" novalidate>
+          <label>Email <span class="req">*</span>
+            <input type="email" name="email" required autocomplete="email">
+          </label>
+          <label>Country <span class="req">*</span>
+            <select name="country" id="country" required></select>
+          </label>
+          <fieldset>
+            <legend>Planned monthly amount <span class="req">*</span></legend>
+            <div class="chips">
+              <label><input type="radio" name="amount" value="5" required> $5</label>
+              <label><input type="radio" name="amount" value="10"> $10</label>
+              <label><input type="radio" name="amount" value="25"> $25</label>
+              <label><input type="radio" name="amount" value="50"> $50</label>
+              <label><input type="radio" name="amount" value="other"> Other</label>
+            </div>
+            <input type="number" name="amountOther" id="amountOther" min="1" placeholder="Amount in $" hidden>
+          </fieldset>
 
-    <section id="support" class="section section-cta">
-      <div class="container cta-inner">
-        <h2 data-i18n="sup.title">Підтримати фонд</h2>
-        <p data-i18n="sup.p1">Зараз Фонд проходить державну реєстрацію. Банківські реквізити та онлайн-оплата з'являться на цій сторінці одразу після її завершення.</p>
-        <p data-i18n="sup.p2">Ми прийматимемо разові та регулярні пожертви в гривні й іноземній валюті — з України та з-за кордону.</p>
-        <div class="soon" data-i18n="sup.soon">Реквізити — незабаром</div>
+          <details class="optional">
+            <summary>Optional</summary>
+            <label>Employer <small>(helps us estimate corporate matching)</small>
+              <input type="text" name="employer" autocomplete="organization">
+            </label>
+            <label class="check"><input type="checkbox" name="bigger" value="yes"> I'm open to discussing a larger gift or a gift from my company</label>
+            <label>How did you hear about us?
+              <select name="source">
+                <option value="">—</option>
+                <option>Reddit</option>
+                <option>A friend</option>
+                <option>Other social media</option>
+                <option>Other</option>
+              </select>
+            </label>
+          </details>
+
+          <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <label class="check"><input type="checkbox" name="consent" value="yes" required> I agree that my data is processed as described in the <a href="privacy.html" target="_blank">Privacy Policy</a>. <span class="req">*</span></label>
+
+          <p class="form-error" id="formError" hidden></p>
+          <button type="submit" class="btn btn-block" id="submitBtn">Count me in</button>
+          <p class="fine">You'll get an email to confirm. Only confirmed sign-ups are counted.</p>
+        </form>
+
+        <div id="thanks" class="thanks" hidden>
+          <h3>Almost done — check your inbox.</h3>
+          <p>Click the link in the email to confirm. Only confirmed sign-ups count.</p>
+          <p><strong>Your personal invite link.</strong> We count how many people join through it:</p>
+          <div class="ref">
+            <input type="text" id="refLink" readonly>
+            <button type="button" class="btn btn-small" id="copyRef">Copy</button>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>
-        <strong data-i18n="foot.name">Благодійний фонд «Тепло рук»</strong>
-        <p data-i18n="foot.status">Фонд перебуває в процесі створення. Інформація на сайті ґрунтується на проєкті Статуту й може уточнюватися.</p>
-      </div>
-      <p class="copy">© <span id="year"></span> <span data-i18n="brand">Тепло рук</span></p>
+    <div class="container">
+      <p>Warm Hands (Teplo Ruk) — One Dollar. Forever. An early-stage initiative. The charity is being registered; we do not accept money yet.</p>
+      <p><a href="privacy.html">Privacy Policy</a> · <a id="contactLink" href="#">Contact</a></p>
     </div>
   </footer>
 
-  <script src="i18n.js"></script>
+  <script src="config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
